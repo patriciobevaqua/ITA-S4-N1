@@ -30,8 +30,21 @@ function orderAlphabetically(array) {
 }
 
 // Exercise 5: Order by year, ascending
-function orderByYear() {
-
+function orderByYear([...array]) {
+  let compare_year_title = (a, b) => {
+    if(a.year < b.year)
+      return -1;
+    if(a.year > b.year)
+      return 1;
+    if(a.title < b.title)
+      return -1;
+    if(a.title > b.title)
+      return 1;
+    return 0;
+  }
+  let result = array.sort( compare_year_title);
+  console.log("EXERCICE 5 ->", result);
+  return result;
 }
 
 // Exercise 6: Calculate the average of the movies in a category
