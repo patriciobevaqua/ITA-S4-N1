@@ -1,14 +1,14 @@
 // Exercise 1: Get the array of all directors.
 function getAllDirectors(array) {
   let result =  array.map( x => x.director);
-  console.log("EXERCICE 1 ->", result);
+  // console.log("EXERCICE 1 ->", result);
   return result;
 }
 
 // Exercise 2: Get the films of a certain director
 function getMoviesFromDirector(array, director) {
   let result = array.filter( x => x.director == director );
-  console.log("EXERCICE 2 ->", result);
+  // console.log("EXERCICE 2 ->", result);
   return result;
 }
 
@@ -16,15 +16,17 @@ function getMoviesFromDirector(array, director) {
 function moviesAverageOfDirector(array, director) {
   let scores = getMoviesFromDirector(array, director).map( x => x.score);
   let result = parseFloat( (scores.reduce( (previous, current) => previous + current )/scores.length).toFixed(2) );
-  console.log("EXERCICE 3 ->", scores);
-  console.log("EXERCICE 3 ->", scores.reduce( (previous, current) => previous + current ));
-  console.log("EXERCICE 3 ->", result);
+  // console.log("EXERCICE 3 ->", scores);
+  // console.log("EXERCICE 3 ->", scores.reduce( (previous, current) => previous + current ));
+  // console.log("EXERCICE 3 ->", result);
   return result;
   }
 
 // Exercise 4:  Alphabetic order by title 
 function orderAlphabetically(array) {
-  
+  let result = array.map( x => x.title).sort().slice(0,20);
+  console.log("EXERCICE 4 ->", result);
+  return result;
 }
 
 // Exercise 5: Order by year, ascending
